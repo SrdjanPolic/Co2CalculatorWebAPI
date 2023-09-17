@@ -9,6 +9,7 @@ namespace Entities.Models
 {
     public class Input
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("InputId")]
         public Guid Id { get; set; }
 
@@ -19,5 +20,11 @@ namespace Entities.Models
         public decimal Co2EqPerKgProduction { get; set; }
 
         public decimal Co2EqPerUnit { get; set; }
+
+        public IList<CultureInput> CultureInputs { get; set; }
+
+        public InputType InputType { get; set; }
+
+        public Guid InputTypeId { get; set; }
     }
 }

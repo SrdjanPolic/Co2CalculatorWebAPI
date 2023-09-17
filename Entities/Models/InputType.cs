@@ -9,11 +9,17 @@ namespace Entities.Models
 {
     public class InputType
     {
+        public InputType()
+        {
+            Inputs = new HashSet<Input>();
+        }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("InputTypeId")]
         public Guid Id { get; set; }
 
         public string Name { get; set; }
 
-
+        public ICollection<Input> Inputs { get; set; }
     }
 }

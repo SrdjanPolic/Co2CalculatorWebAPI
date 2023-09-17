@@ -9,9 +9,12 @@ namespace Entities.Models
 {
     public class Culture
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("CultureId")]
         public Guid Id { get; set; }
 
         public string Name { get; set; }
+
+        public IList<CultureInput> CultureInputs { get; set; }
     }
 }

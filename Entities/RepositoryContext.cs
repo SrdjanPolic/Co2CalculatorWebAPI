@@ -4,10 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entities
 {
@@ -27,12 +23,28 @@ namespace Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new CompanyConfiguration());
-            modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
+            //modelBuilder.Entity<Input>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
+            //modelBuilder.Entity<Culture>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
+            //modelBuilder.Entity<InputType>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
+            //modelBuilder.ApplyConfiguration(new CompanyConfiguration());
+            //modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
+            modelBuilder.ApplyConfiguration(new CultureConfiguration());
+            
+
+            modelBuilder.Entity<CultureInput>().HasKey(ci => new { ci.CultureId, ci.InputId });
+
+            modelBuilder.Entity<InputType>()
+            .HasMany(e => e.Inputs)
+            .WithOne(e => e.InputType)
+            .HasForeignKey(e => e.InputTypeId);
         }
 
-        public DbSet<Company> Companies { get; set; }
-        public DbSet<Employee> Employees { get; set; }
+        //public DbSet<Company> Companies { get; set; }
+        //public DbSet<Employee> Employees { get; set; }
+
+        public DbSet<Culture> Cultures { get; set; }
+        public DbSet<Input> Inputs { get; set; }
+        public DbSet<CultureInput> CultureInputs { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
