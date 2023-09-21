@@ -11,11 +11,7 @@ namespace Entities
     {
         protected readonly IConfiguration Configuration;
 
-        public RepositoryContext()
-        {
-            
-        }
-
+        
         public RepositoryContext(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -28,8 +24,12 @@ namespace Entities
             //modelBuilder.Entity<InputType>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
             //modelBuilder.ApplyConfiguration(new CompanyConfiguration());
             //modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
-            modelBuilder.ApplyConfiguration(new CultureConfiguration());
+
             
+            modelBuilder.ApplyConfiguration(new CultureConfiguration());
+
+            modelBuilder.ApplyConfiguration(new InputTypeConfiguration());
+
 
             modelBuilder.Entity<CultureInput>().HasKey(ci => new { ci.CultureId, ci.InputId });
 

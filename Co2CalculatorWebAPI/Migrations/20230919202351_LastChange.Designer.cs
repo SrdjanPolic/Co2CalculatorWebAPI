@@ -3,14 +3,16 @@ using System;
 using Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Co2CalculatorWebAPI.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20230919202351_LastChange")]
+    partial class LastChange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -109,28 +111,6 @@ namespace Co2CalculatorWebAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("InputType");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("bcfc373e-9153-42f9-9722-ee5026e92146"),
-                            Name = "Soil"
-                        },
-                        new
-                        {
-                            Id = new Guid("7598708d-e196-4380-9d95-ba139a6f12c6"),
-                            Name = "Fuel"
-                        },
-                        new
-                        {
-                            Id = new Guid("d8c2cc2d-4c39-4295-a95c-7ba18175c0b2"),
-                            Name = "Pesticide"
-                        },
-                        new
-                        {
-                            Id = new Guid("7a5d6cf9-705d-463b-901e-fd1e30284154"),
-                            Name = "Fertilizer"
-                        });
                 });
 
             modelBuilder.Entity("Entities.Models.CultureInput", b =>

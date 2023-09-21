@@ -17,14 +17,17 @@ namespace Entities.Configuration
             (
                 new Culture
                 {
+                    Id = new Guid("021ca3c1-0deb-4afd-ae94-2159a8479811"),
                     Name = "Corn"
                 },
                 new Culture
                 {
+                    Id = new Guid("86dba8c0-d178-41e7-938c-ed49778fb52a"),
                     Name = "Wheat"
                 },
                 new Culture
                 {
+                    Id = new Guid("80abbca8-664d-4b20-b5de-024705497d4a"),
                     Name = "Ray"
                 }
             );
