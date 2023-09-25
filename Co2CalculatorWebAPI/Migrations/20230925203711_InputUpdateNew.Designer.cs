@@ -3,14 +3,16 @@ using System;
 using Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Co2CalculatorWebAPI.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20230925203711_InputUpdateNew")]
+    partial class InputUpdateNew
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -89,28 +91,28 @@ namespace Co2CalculatorWebAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("01906959-9e63-423a-8add-f6e3198ac9fa"),
+                            Id = new Guid("30675453-f7be-4cdf-b53c-69673e3e2628"),
                             Co2EqPerKgCoefficient = 9.78m,
                             InputTypeId = new Guid("4d80714f-8bda-4e8b-82cd-af9c5be709ec"),
                             Name = "NitrogenFertilizer"
                         },
                         new
                         {
-                            Id = new Guid("ff6ac44d-5539-4a8d-add5-aa71354aca81"),
+                            Id = new Guid("87ba49a5-65c6-4633-838b-e942341250ab"),
                             Co2EqPerKgCoefficient = 0.73m,
                             InputTypeId = new Guid("4d80714f-8bda-4e8b-82cd-af9c5be709ec"),
                             Name = "Urea"
                         },
                         new
                         {
-                            Id = new Guid("8ab62401-e837-4bda-8c36-1b9aaf49300a"),
+                            Id = new Guid("23fbc9cd-eb1b-4eac-9f1d-dfd74cf5b71d"),
                             Co2EqPerKgCoefficient = 0.16m,
                             InputTypeId = new Guid("4d80714f-8bda-4e8b-82cd-af9c5be709ec"),
                             Name = "KaliumFertilizer"
                         },
                         new
                         {
-                            Id = new Guid("74e865a8-1fc6-4f18-8a6f-77778ff51fb7"),
+                            Id = new Guid("59e8d239-d198-4fe5-8407-325968fbef36"),
                             Co2EqPerKgCoefficient = 4.5m,
                             InputTypeId = new Guid("4d80714f-8bda-4e8b-82cd-af9c5be709ec"),
                             Name = "PhosphorusFertilizer"
@@ -134,22 +136,22 @@ namespace Co2CalculatorWebAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("2c0f49a0-e74b-4542-bf93-c82bb9a2b8ff"),
+                            Id = new Guid("c904cca1-4c6c-4bd9-98a9-139ea5d05b5f"),
                             Name = "Soil"
                         },
                         new
                         {
-                            Id = new Guid("854c37b3-8ea1-4080-b569-904410bd313f"),
+                            Id = new Guid("294f7163-81e9-4ef1-a13c-307e493ead41"),
                             Name = "Fuel"
                         },
                         new
                         {
-                            Id = new Guid("d1d73d63-c4be-4ce6-ad84-770bf620be47"),
+                            Id = new Guid("e2d0ce72-0ab6-459d-b727-1976d7f6e938"),
                             Name = "Pesticide"
                         },
                         new
                         {
-                            Id = new Guid("3314fe3b-6af1-43d9-a417-e4af1b221038"),
+                            Id = new Guid("d619ad71-0ada-410a-a4b4-51d231cd2407"),
                             Name = "Fertilizer"
                         });
                 });

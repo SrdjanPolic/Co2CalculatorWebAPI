@@ -30,6 +30,8 @@ namespace Entities
 
             modelBuilder.ApplyConfiguration(new InputTypeConfiguration());
 
+            modelBuilder.ApplyConfiguration(new InputConfiguration());
+
 
             modelBuilder.Entity<CultureInput>().HasKey(ci => new { ci.CultureId, ci.InputId });
 

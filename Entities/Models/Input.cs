@@ -15,16 +15,13 @@ namespace Entities.Models
 
         public string Name { get; set; }
 
-        public decimal Co2EqPerKgAppliance { get; set; }
-
-        public decimal Co2EqPerKgProduction { get; set; }
-
-        public decimal Co2EqPerUnit { get; set; }
+        public decimal Co2EqPerKgCoefficient { get; set; }
 
         public IList<CultureInput> CultureInputs { get; set; }
 
         public InputType InputType { get; set; }
 
+        [ForeignKey(nameof(InputType))]
         public Guid InputTypeId { get; set; }
     }
 }
