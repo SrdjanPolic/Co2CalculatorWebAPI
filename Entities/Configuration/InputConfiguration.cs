@@ -13,7 +13,6 @@ namespace Entities.Configuration
     {
         public void Configure(EntityTypeBuilder<Input> builder)
         {
-
             builder.HasData
             (
                 new Input
@@ -43,7 +42,15 @@ namespace Entities.Configuration
                      Name = "PhosphorusFertilizer",
                      Co2EqPerKgCoefficient = 4.5m,
                      InputTypeId = new Guid("4d80714f-8bda-4e8b-82cd-af9c5be709ec")
+                 },
+                 new Input
+                 {
+                     Id = Guid.NewGuid(),
+                     Name = "Soil1",
+                     Co2KgPerHa = 4000m,
+                     InputTypeId = new Guid("4d80714f-8bda-4e8b-82cd-af9c5be709ec")
                  }
+
             );
         }
     }

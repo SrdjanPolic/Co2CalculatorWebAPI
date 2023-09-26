@@ -85,36 +85,6 @@ namespace Co2CalculatorWebAPI.Migrations
                     b.HasIndex("InputTypeId");
 
                     b.ToTable("Inputs");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("01906959-9e63-423a-8add-f6e3198ac9fa"),
-                            Co2EqPerKgCoefficient = 9.78m,
-                            InputTypeId = new Guid("4d80714f-8bda-4e8b-82cd-af9c5be709ec"),
-                            Name = "NitrogenFertilizer"
-                        },
-                        new
-                        {
-                            Id = new Guid("ff6ac44d-5539-4a8d-add5-aa71354aca81"),
-                            Co2EqPerKgCoefficient = 0.73m,
-                            InputTypeId = new Guid("4d80714f-8bda-4e8b-82cd-af9c5be709ec"),
-                            Name = "Urea"
-                        },
-                        new
-                        {
-                            Id = new Guid("8ab62401-e837-4bda-8c36-1b9aaf49300a"),
-                            Co2EqPerKgCoefficient = 0.16m,
-                            InputTypeId = new Guid("4d80714f-8bda-4e8b-82cd-af9c5be709ec"),
-                            Name = "KaliumFertilizer"
-                        },
-                        new
-                        {
-                            Id = new Guid("74e865a8-1fc6-4f18-8a6f-77778ff51fb7"),
-                            Co2EqPerKgCoefficient = 4.5m,
-                            InputTypeId = new Guid("4d80714f-8bda-4e8b-82cd-af9c5be709ec"),
-                            Name = "PhosphorusFertilizer"
-                        });
                 });
 
             modelBuilder.Entity("Entities.Models.InputType", b =>
@@ -134,22 +104,22 @@ namespace Co2CalculatorWebAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("2c0f49a0-e74b-4542-bf93-c82bb9a2b8ff"),
+                            Id = new Guid("b95ffc1c-bca5-4d58-ba07-811a92def7dc"),
                             Name = "Soil"
                         },
                         new
                         {
-                            Id = new Guid("854c37b3-8ea1-4080-b569-904410bd313f"),
+                            Id = new Guid("85801c86-c678-45f1-843a-f615ff5b6a43"),
                             Name = "Fuel"
                         },
                         new
                         {
-                            Id = new Guid("d1d73d63-c4be-4ce6-ad84-770bf620be47"),
+                            Id = new Guid("a9df09d9-8325-4018-9516-a0ac0c8e3467"),
                             Name = "Pesticide"
                         },
                         new
                         {
-                            Id = new Guid("3314fe3b-6af1-43d9-a417-e4af1b221038"),
+                            Id = new Guid("4d80714f-8bda-4e8b-82cd-af9c5be709ec"),
                             Name = "Fertilizer"
                         });
                 });

@@ -17,11 +17,12 @@ namespace Entities.Models
 
         public decimal Co2EqPerKgCoefficient { get; set; }
 
+       public decimal Co2KgPerHa { get; set; }
+
         public IList<CultureInput> CultureInputs { get; set; }
 
         public InputType InputType { get; set; }
 
-        [ForeignKey(nameof(InputType))]
         public Guid InputTypeId { get; set; }
     }
 }
