@@ -19,26 +19,18 @@ namespace Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Input>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
-            //modelBuilder.Entity<Culture>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
-            //modelBuilder.Entity<InputType>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
-            //modelBuilder.ApplyConfiguration(new CompanyConfiguration());
-            //modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
-
-            
-            modelBuilder.ApplyConfiguration(new CultureConfiguration());
-
-            modelBuilder.ApplyConfiguration(new InputTypeConfiguration());
-
-            modelBuilder.ApplyConfiguration(new InputConfiguration());
-
-
             modelBuilder.Entity<CultureInput>().HasKey(ci => new { ci.CultureId, ci.InputId });
 
             modelBuilder.Entity<InputType>()
             .HasMany(e => e.Inputs)
             .WithOne(e => e.InputType)
             .HasForeignKey(e => e.InputTypeId);
+
+            modelBuilder.ApplyConfiguration(new CultureConfiguration());
+
+            modelBuilder.ApplyConfiguration(new InputTypeConfiguration());
+
+            modelBuilder.ApplyConfiguration(new InputConfiguration());
         }
 
         //public DbSet<Company> Companies { get; set; }
