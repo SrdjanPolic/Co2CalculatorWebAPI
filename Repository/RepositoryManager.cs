@@ -11,35 +11,49 @@ namespace Repository
     public class RepositoryManager : IRepositoryManager
     {
         private RepositoryContext _repositoryContext;
-        //private ICompanyRepository _companyRepository;
-        //private IEmployeeRepository _employeeRepository;
+        private IInputRepository _inputRepository;
+        private IInputTypeRepository _inputTypeRepository;
+        private ICultureRepository _cultureRepository;
 
         public RepositoryManager(RepositoryContext repositoryContext)
         {
             _repositoryContext = repositoryContext;
         }
 
-        //public ICompanyRepository Company
-        //{
-        //    get
-        //    {
-        //        if (_companyRepository == null)
-        //            _companyRepository = new CompanyRepository(_repositoryContext);
+        public ICultureRepository Culture
+        {
+            get
+            {
+                if (_cultureRepository == null)
+                    _cultureRepository = new CultureRepository(_repositoryContext);
 
-        //        return _companyRepository;
-        //    }
-        //}
+                return _cultureRepository;
+            }
+        }
 
-        //public IEmployeeRepository Employee
-        //{
-        //    get
-        //    {
-        //        if (_employeeRepository == null)
-        //            _employeeRepository = new EmployeeRepository(_repositoryContext);
+        public IInputTypeRepository InputType
+        {
+            get
+            {
+                if (_inputTypeRepository == null)
+                    _inputTypeRepository = new InputTypeRepository(_repositoryContext);
 
-        //        return _employeeRepository;
-        //    }
-        //}
+                return _inputTypeRepository;
+            }
+        }
+
+        public IInputRepository Input
+        {
+            get
+            {
+                if (_inputRepository == null)
+                    _inputRepository = new InputRepository(_repositoryContext);
+
+                return _inputRepository;
+            }
+        }
+
+    
         public void Save() => _repositoryContext.SaveChanges();
     }
 }
