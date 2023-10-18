@@ -33,6 +33,7 @@ namespace Co2CalculatorWebAPI
            // services.ConfigureLoggerService();
             services.ConfigureSqlContext(Configuration);
             services.ConfigureRepositoryManager();
+            services.ConfigureICo2Calculator();
 
             services.AddControllers();
             services.AddControllers();

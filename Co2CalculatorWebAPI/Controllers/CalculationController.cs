@@ -43,7 +43,7 @@ namespace Co2CalculatorWebAPI.Controllers
             return Ok(inputTypesDto);
         }
 
-        [HttpGet("InputTypes")]
+        [HttpGet("Calculate")]
         public ActionResult<decimal> Calculate([FromBody] IEnumerable<InputDto> inputDtos)
         {
             var inputs = _mapper.Map<IEnumerable<Input>>(inputDtos);
@@ -52,5 +52,16 @@ namespace Co2CalculatorWebAPI.Controllers
 
             return Ok(result);
         }
+
+        [HttpGet("GetInputs/{id}")]
+        public ActionResult<Input[]> GetInputsForInputTypeId(Guid id)
+        {
+            var inputs = _repository.Input.GetAllInputsForInputTypeId(false, id);
+
+            var inputsDto = _mapper.Map<IEnumerable<InputDto>>(inputs);
+
+            return Ok(inputsDto);
+        }
+
     }
 }

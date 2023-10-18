@@ -14,5 +14,10 @@ namespace Repository
         public InputRepository(RepositoryContext repositoryContext) : base(repositoryContext)
         {
         }
+
+        public IEnumerable<Input> GetAllInputsForInputTypeId(bool trackChanges, Guid inputTypeId)
+        {
+            return FindAll(trackChanges).Where(x => x.InputTypeId == inputTypeId).ToList();
+        }
     }
 }

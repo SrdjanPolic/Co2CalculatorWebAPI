@@ -51,7 +51,7 @@ namespace Co2CalculatorWebAPI.Extensions
            services.AddScoped<IRepositoryManager, RepositoryManager>();
 
         public static void ConfigureICo2Calculator(this IServiceCollection services) =>
-           services.AddScoped<ICo2CalculatorManager, Co2CalculatorManager>();
+           services.AddSingleton<ICo2CalculatorManager, Co2CalculatorManager>();
 
     }
 }

@@ -11,6 +11,8 @@ namespace Contracts
         //ICompanyRepository Company { get; }
         //IEmployeeRepository Employee { get; }
         IInputTypeRepository InputType { get; }
+
+        IInputRepository Input { get; }
         void Save();
     }
 }
