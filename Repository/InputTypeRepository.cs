@@ -14,5 +14,11 @@ namespace Repository
         public InputTypeRepository(RepositoryContext repositoryContext) : base(repositoryContext)
         {
         }
+
+        public IEnumerable<InputType> GetAllInputTypes(bool trackChanges)
+        { 
+           return FindAll(trackChanges)
+           .ToList();
+        }
     }
 }

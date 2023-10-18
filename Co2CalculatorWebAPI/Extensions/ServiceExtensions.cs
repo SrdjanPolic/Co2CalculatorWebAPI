@@ -1,4 +1,5 @@
-﻿using Contracts;
+﻿using Business;
+using Contracts;
 using Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
@@ -48,6 +49,9 @@ namespace Co2CalculatorWebAPI.Extensions
 
         public static void ConfigureRepositoryManager(this IServiceCollection services) =>
            services.AddScoped<IRepositoryManager, RepositoryManager>();
+
+        public static void ConfigureICo2Calculator(this IServiceCollection services) =>
+           services.AddScoped<ICo2CalculatorManager, Co2CalculatorManager>();
 
     }
 }

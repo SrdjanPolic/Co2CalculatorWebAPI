@@ -29,6 +29,7 @@ namespace Co2CalculatorWebAPI
         {
             services.ConfigureCors();
             services.ConfigureIISIntegration();
+            services.AddAutoMapper(typeof(Startup));
            // services.ConfigureLoggerService();
             services.ConfigureSqlContext(Configuration);
             services.ConfigureRepositoryManager();
