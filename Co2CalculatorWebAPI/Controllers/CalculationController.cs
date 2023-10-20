@@ -48,7 +48,9 @@ namespace Co2CalculatorWebAPI.Controllers
         {
             var inputs = _mapper.Map<IEnumerable<Input>>(inputDtos);
 
-            var result = _co2CalculatorManager.Calculate(inputs);
+            var inputsForCalculate = _repository.Input.PopulateInputsWithCoefficients(inputs);
+
+            var result = _co2CalculatorManager.Calculate(inputsForCalculate);
 
             return Ok(result);
         }

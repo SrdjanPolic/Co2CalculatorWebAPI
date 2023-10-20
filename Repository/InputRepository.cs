@@ -19,5 +19,20 @@ namespace Repository
         {
             return FindAll(trackChanges).Where(x => x.InputTypeId == inputTypeId).ToList();
         }
+
+        public IEnumerable<Input> PopulateInputsWithCoefficients(IEnumerable<Input> inputs)
+        {
+            foreach (Input input in inputs)
+            {
+                var inputFromDb = FindByCondition(x => x.Id == input.Id, false).FirstOrDefault<Input>();
+                if (inputFromDb != default)
+                {
+                    input.Co2EqPerKgCoefficient = inputFromDb.Co2EqPerKgCoefficient;
+                    input.Co2KgPerHa = inputFromDb.Co2KgPerHa;
+                }
+            }
+
+            return inputs;
+        }
     }
 }

@@ -33,7 +33,7 @@ namespace Entities.Configuration
                  {
                      Id = Guid.NewGuid(),
                      Name = "KaliumFertilizer",
-                     Co2EqPerKgCoefficient = 0.16m,
+                     Co2EqPerKgCoefficient = 0.161m,
                      InputTypeId = new Guid("242E5514-CE39-4647-AD4D-A81516BE7DEF")
                  },
                  new Input

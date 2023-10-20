@@ -15,6 +15,8 @@ namespace Co2CalculatorWebAPI.Mappings
             CreateMap<InputType, InputTypeDto>();
 
             CreateMap<Input, InputDto>();
+
+            CreateMap<InputDto, Input>();
         }
     }
 }

@@ -10,5 +10,7 @@ namespace Contracts
     public interface IInputRepository
     {
         IEnumerable<Input> GetAllInputsForInputTypeId(bool trackChanges, Guid inputTypeId);
+
+        IEnumerable<Input> PopulateInputsWithCoefficients(IEnumerable<Input> inputs);
     }
 }
